@@ -22,7 +22,8 @@ config = {
         "dataFile": dataFile
     },
     "settings": {
-        "showLandmarks": "true"
+        "showLandmarks": "true",
+        "detailLayout": "sphereFishEye"
     }
 }
 
