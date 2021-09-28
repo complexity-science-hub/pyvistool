@@ -11,10 +11,11 @@ import json
 class Vistool():
 
 
-    def __init__(self, visualization, config):
+    def __init__(self, visualization, config, browser=None):
         self.visualization = visualization
         self.config = config
         self.config["visType"] = visualization
+        self.browser = browser
 
         for key in self.config["data"]:
             if isinstance(self.config["data"][key], dict):
@@ -53,4 +54,4 @@ class Vistool():
         url = "file://{}".format(filename)
         # Hack to prevent blank page
         time.sleep(0.5)
-        webbrowser.open(url)
+        webbrowser.get(using=self.browser).open(url)

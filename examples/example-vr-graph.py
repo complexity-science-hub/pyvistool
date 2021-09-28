@@ -26,5 +26,6 @@ config = {
     }
 }
 
+#vt = Vistool("vr-graph", config, "chrome")
 vt = Vistool("vr-graph", config)
 vt.show()
