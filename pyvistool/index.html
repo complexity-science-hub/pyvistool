@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>pyvistool</title>
+    <script src="https://vis.csh.ac.at/vistool/api/vistoolapi.js"></script>
+</head>
+<body>
+    <script>
+        async function init() {
+            let vistool = VisTool.getInstance();
+
+            let url = await vistool.getAppUrl("{{applicationId}}");
+
+            let form = document.createElement('form');
+            form.action = url;
+            form.method = "post";
+            form.style.visibility = "hidden";
+
+            let input = document.createElement('textarea');
+            input.type = "type";
+            input.name = "pyconfig";
+            input.value = "{{vistoolconfig}}".replace(/'/g, '"');
+
+            form.append(input);
+
+            document.body.append(form);
+            form.submit();
+        }
+
+        init();
+    </script>
+</body>
+</html>
