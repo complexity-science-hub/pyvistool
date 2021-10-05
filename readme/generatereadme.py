@@ -15,7 +15,8 @@ def createAppDoc(vis):
 
     app_str = appj.render(
         app=vis,
-        files=appConfig["files"]
+        files=appConfig["files"],
+        settings=appConfig["settings"]
     )
 
     tmpFilename = TEMPLATES_PATH + "/app-" + vis["id"] + ".md"
