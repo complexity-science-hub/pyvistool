@@ -16,8 +16,7 @@ Datasets can be provides either as json or as a 2-dimensional array (including t
 
 Name | Format (Header) | Description
 ---- | ------ | -----------
-<pre>nodeList</pre> | <pre>id;weight;desc;...</pre> | <br><br><ul><li><b>id</b>: the id of the node<li><b>Attributes</b>: add as many attributes as you want</li></ul>
-<pre>dataFile</pre> | <pre>source;target;weight;desc;...</pre> | <br><br><ul><li><b>Source</b>: id of the source node<li><b>Target</b>: id of the target node<li><b>Attributes</b>: add as many attributes as you want</li></ul>
+nodeList | id;weight;desc;... | id: the id of the node Attributes: add as many attributes as you want
 
 #### Settings
 
