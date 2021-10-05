@@ -16,7 +16,7 @@ Datasets can be provides either as json or as a 2-dimensional array (including t
 
 Name | Format (Header) | Description
 ---- | ------ | -----------
-    <pre>dataset</pre> | <pre>Group 1;Group 2</pre> | <br><br><ul><li><b>First column</b>: group A<li><b>Second column</b>: group B</li></ul>
+<pre>dataset</pre> | <pre>Group 1;Group 2</pre> | <br><br><ul><li><b>First column</b>: group A<li><b>Second column</b>: group B</li></ul>
 
 #### Settings
 
