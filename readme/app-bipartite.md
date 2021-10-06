@@ -26,11 +26,11 @@ Name | Format (Header) | Description
 
 ##### Value formatting
 
-Name | Type | Required | Description
+Name | Type / Options | Required | Description
 ---- | ---- | -------- | -----------
 ```unit``` | ```string``` |  | Unit
 ```decimals``` | ```number``` |  | Value decimals
 ```unit_space``` | ```boolean``` |  | Space between value and unit
-```unit_position``` | ```select``` |  | Unit positioning
+```unit_position``` | ```'left'``` &#124; ```'right'``` |  | Unit positioning
 
 #### Example

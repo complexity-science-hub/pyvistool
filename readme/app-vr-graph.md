@@ -27,26 +27,26 @@ Name | Format (Header) | Description
 
 ##### Node settings
 
-Name | Type | Required | Description
+Name | Type / Options | Required | Description
 ---- | ---- | -------- | -----------
-```node-label``` | ```select``` | yes | Node label column
-```node-desc``` | ```select``` |  | Node description column
-```node-auto-color-by``` | ```select``` |  | Node color by column
-```node-val``` | ```select``` |  | Node value column
-```node-color``` | ```select``` |  | Node color column
+```node-label``` | column name of dataset ```nodeList``` | yes | Node label column
+```node-desc``` | column name of dataset ```nodeList``` |  | Node description column
+```node-auto-color-by``` | column name of dataset ```nodeList``` |  | Node color by column
+```node-val``` | column name of dataset ```nodeList``` |  | Node value column
+```node-color``` | column name of dataset ```nodeList``` |  | Node color column
 ```node-label-billboard``` | ```boolean``` |  | Display node labels as billboards
 ##### Edge settings
 
-Name | Type | Required | Description
+Name | Type / Options | Required | Description
 ---- | ---- | -------- | -----------
-```link-label``` | ```select``` |  | Edge label column
-```link-width``` | ```select``` |  | Edge width column
-```link-color``` | ```select``` |  | Edge color column
+```link-label``` | column name of dataset ```dataFile``` |  | Edge label column
+```link-width``` | column name of dataset ```dataFile``` |  | Edge width column
+```link-color``` | column name of dataset ```dataFile``` |  | Edge color column
 ##### Additional settings
 
-Name | Type | Required | Description
+Name | Type / Options | Required | Description
 ---- | ---- | -------- | -----------
-```detailLayout``` | ```select``` |  | Detail layout mode
+```detailLayout``` | ```'normal'``` &#124; ```'normalNoDirectLinks'``` &#124; ```'sphereFishEye'``` &#124; ```'rings'``` |  | Detail layout mode
 ```showLandmarks``` | ```boolean``` |  | skybox
 ```permanentSelection``` | ```boolean``` |  | permanent selection
 ```distanceEncoding``` | ```boolean``` |  | distance encoding
