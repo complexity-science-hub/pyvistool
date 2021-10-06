@@ -26,7 +26,7 @@ Name | Format (Header) | Description
 
 ##### Settings
 
-Name | Type / Options | Required | Description
+Name | Type | Required | Description
 ---- | ---- | -------- | -----------
 ```settingA``` | ```string``` |  | Setting A
 ```settingB``` | ```string``` |  | Setting B

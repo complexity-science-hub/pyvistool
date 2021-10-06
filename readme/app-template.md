@@ -29,10 +29,11 @@ Name | Format (Header) | Description
 {% for setting in settings %}
 ##### {{ setting.title }}
 
-Name | Type / Options | Required | Description
+Name | Type | Required | Description
 ---- | ---- | -------- | -----------
 {% for attribute in setting.attributes %}
-```{{ attribute.id }}``` | {% if attribute.type == "select" %}{% if attribute.options == "fileColumns" %}column name of dataset ```{{ attribute.file }}```{% else %}{% for option in attribute.options %}```'{{ option.value }}'```{{ " &#124; " if not loop.last else "" }}{% endfor %}{% endif %}{% else %}```{{ attribute.type }}```{% endif %} | {% if attribute.required is sameas true %}yes{% endif %} | {{ attribute.label }}
+```{{ attribute.id }}``` | {% if attribute.type == "select" %}```string```{% else %}```{{ attribute.type }}```{% endif %} | {% if attribute.required is sameas true %}yes{% endif %} | {{ attribute.label }}{% if attribute.type == "select" %}<br><br><b>Options:</b>{% if attribute.options == "fileColumns" %}<br>column name of dataset ```{{ attribute.file }}```{% else %}<ul>{% for option in attribute.options %}<li>{{ option.label }}: ```'{{ option.value }}'```</li>{% endfor %}</ul>{% endif %}{% endif %}
+
 {% endfor %}
 {% endfor %}
 

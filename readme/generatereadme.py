@@ -11,7 +11,10 @@ def createAppDoc(vis):
     with urllib.request.urlopen(baseUrl + vis["config"]) as url:
         appConfig = json.load(url)
 
-    print(appConfig)
+    #print(appConfig)
+    appConfig["files"] = createFileVariants(appConfig["files"])
+
+
 
     app_str = appj.render(
         app=vis,
@@ -23,6 +26,16 @@ def createAppDoc(vis):
 
     with open(tmpFilename, "w+", encoding="utf-8") as f:
         f.write(app_str)
+
+
+def createFileVariants(files):
+    for file in files:
+            rules = []
+
+            for h in file["header"]:
+                if 'rules' in h:
+                    print(h["rules"])
+    return files
 
 
 mainConfigUrl = baseUrl + "config.json"

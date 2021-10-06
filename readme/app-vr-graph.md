@@ -27,26 +27,26 @@ Name | Format (Header) | Description
 
 ##### Node settings
 
-Name | Type / Options | Required | Description
+Name | Type | Required | Description
 ---- | ---- | -------- | -----------
-```node-label``` | column name of dataset ```nodeList``` | yes | Node label column
-```node-desc``` | column name of dataset ```nodeList``` |  | Node description column
-```node-auto-color-by``` | column name of dataset ```nodeList``` |  | Node color by column
-```node-val``` | column name of dataset ```nodeList``` |  | Node value column
-```node-color``` | column name of dataset ```nodeList``` |  | Node color column
+```node-label``` | ```string``` | yes | Node label column<br><br><b>Options:</b><br>column name of dataset ```nodeList```
+```node-desc``` | ```string``` |  | Node description column<br><br><b>Options:</b><br>column name of dataset ```nodeList```
+```node-auto-color-by``` | ```string``` |  | Node color by column<br><br><b>Options:</b><br>column name of dataset ```nodeList```
+```node-val``` | ```string``` |  | Node value column<br><br><b>Options:</b><br>column name of dataset ```nodeList```
+```node-color``` | ```string``` |  | Node color column<br><br><b>Options:</b><br>column name of dataset ```nodeList```
 ```node-label-billboard``` | ```boolean``` |  | Display node labels as billboards
 ##### Edge settings
 
-Name | Type / Options | Required | Description
+Name | Type | Required | Description
 ---- | ---- | -------- | -----------
-```link-label``` | column name of dataset ```dataFile``` |  | Edge label column
-```link-width``` | column name of dataset ```dataFile``` |  | Edge width column
-```link-color``` | column name of dataset ```dataFile``` |  | Edge color column
+```link-label``` | ```string``` |  | Edge label column<br><br><b>Options:</b><br>column name of dataset ```dataFile```
+```link-width``` | ```string``` |  | Edge width column<br><br><b>Options:</b><br>column name of dataset ```dataFile```
+```link-color``` | ```string``` |  | Edge color column<br><br><b>Options:</b><br>column name of dataset ```dataFile```
 ##### Additional settings
 
-Name | Type / Options | Required | Description
+Name | Type | Required | Description
 ---- | ---- | -------- | -----------
-```detailLayout``` | ```'normal'``` &#124; ```'normalNoDirectLinks'``` &#124; ```'sphereFishEye'``` &#124; ```'rings'``` |  | Detail layout mode
+```detailLayout``` | ```string``` |  | Detail layout mode<br><br><b>Options:</b><ul><li>Fly-Through: ```'normal'```</li><li>Jump-Through: ```'normalNoDirectLinks'```</li><li>Fish -Eye: ```'sphereFishEye'```</li><li>Tunnel: ```'rings'```</li></ul>
 ```showLandmarks``` | ```boolean``` |  | skybox
 ```permanentSelection``` | ```boolean``` |  | permanent selection
 ```distanceEncoding``` | ```boolean``` |  | distance encoding
