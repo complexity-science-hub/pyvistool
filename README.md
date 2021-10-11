@@ -40,16 +40,23 @@ You can find a list of available visualization and information about how to conf
 
 Create a configuration for the visualization you want to use:
 
-   ```py
+   <pre>
     config = {
-        "data": {
-            ....
+        "datasets": {
+            "<i>nameOfDataset</i>": {
+                "options": {
+                    ...
+                },
+                "data": {
+                    ...
+                }
+            }
         },
         "settings": {
             ....
         }
     }
-   ```
+   </pre>
 Create and show the visualization ([replace the appId](readme/apps.md)):
 
    <pre>

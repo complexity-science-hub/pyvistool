@@ -17,8 +17,10 @@ dataFile = [
         ]
 
 config = {
-    "data": {
-        "nodeList": nodeList,
+    "datasets": {
+        "nodeList": {
+            "data": nodeList
+        }
         "dataFile": dataFile
     },
     "settings": {

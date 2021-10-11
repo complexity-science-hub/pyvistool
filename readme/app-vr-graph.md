@@ -14,14 +14,14 @@ Virtual reality graph visualization
 
 ### Configuration
 
-#### Data
+#### Datasets
 
 Datasets can be provided either as json or as a 2-dimensional array (including the header).
 
-Name | Format (Header) | Description
----- | ------ | -----------
-```nodeList``` | ```id;weight;desc;...``` | <ul><li><b>id</b>: the id of the node</li><li><b>Attributes</b>: add as many attributes as you want</li></ul>
-```dataFile``` | ```source;target;weight;desc;...``` | <ul><li><b>Source</b>: id of the source node</li><li><b>Target</b>: id of the target node</li><li><b>Attributes</b>: add as many attributes as you want</li></ul>
+Name | Format (Header) | Options | Description
+---- | --------------- | ------- | -----------
+```nodeList``` | ```id;weight;desc;...``` |  | <ul><li><b>id</b>: the id of the node</li><li><b>Attributes</b>: add as many attributes as you want</li></ul>
+```dataFile``` | ```source;target;weight;desc;...``` |  | <ul><li><b>Source</b>: id of the source node</li><li><b>Target</b>: id of the target node</li><li><b>Attributes</b>: add as many attributes as you want</li></ul>
 
 #### Settings
 

@@ -14,13 +14,14 @@ Bipartite network visualization
 
 ### Configuration
 
-#### Data
+#### Datasets
 
 Datasets can be provided either as json or as a 2-dimensional array (including the header).
 
-Name | Format (Header) | Description
----- | ------ | -----------
-```dataset``` | ```Group 1;Filter 1;Filter 2;Filter 3;Group 2;Group 2;Value;Value;Cluster``` | <ul><li><b>First column</b>: group A</li><li><b>As many columns as you want</b>: filters</li><li><b>Second last column</b>: group B</li><li><b>Third last column</b>: group B</li><li><b>Last column</b>: value</li><li><b>Second last column</b>: value</li><li><b>Last column</b>: cluster</li></ul>
+Name | Format (Header) | Options | Description
+---- | --------------- | ------- | -----------
+```dataset```<br><br>(case: *custom_clustering ==  False*) | ```Group 1;Filter 1;Filter 2;Filter 3;Group 2;Value``` | **Custom clustering**: ```custom_clustering```, type: ```boolean``` | <ul><li><b>First column</b>: group A</li><li><b>As many columns as you want</b>: filters</li><li><b>Second last column</b>: group B</li><li><b>Last column</b>: value</li></ul>
+```dataset```<br><br>(case: *custom_clustering ==  True*) | ```Group 1;Filter 1;Filter 2;Filter 3;Group 2;Value;Cluster``` | **Custom clustering**: ```custom_clustering```, type: ```boolean``` | <ul><li><b>First column</b>: group A</li><li><b>As many columns as you want</b>: filters</li><li><b>Third last column</b>: group B</li><li><b>Second last column</b>: value</li><li><b>Last column</b>: cluster</li></ul>
 
 #### Settings
 

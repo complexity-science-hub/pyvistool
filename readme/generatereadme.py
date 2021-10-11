@@ -1,7 +1,7 @@
 import urllib.request
 import json
 import jinja2
-import os
+import os, copy
 
 baseUrl = "https://vis.csh.ac.at/vistool/"
 
@@ -31,13 +31,67 @@ def createAppDoc(vis):
 
 
 def createFileVariants(files):
+    resultFiles = []
+
     for file in files:
             rules = []
+            eitherOrRulesAvailable = False
 
             for h in file["header"]:
                 if 'rules' in h:
-                    print(h["rules"])
-    return files
+                    if not h["rules"] in rules:
+                        print("new rule: ")
+                        print(h["rules"])
+                        if len(h["rules"]) == 1 and isinstance(list(h["rules"].values())[0], bool):
+                            print("one rule is boolean")
+                            for rule in rules:
+                                if len(h["rules"]) == 1 and isinstance(list(rule.values())[0], bool):
+                                    if list(h["rules"].keys())[0] == list(rule.keys())[0] and list(h["rules"].values())[0] != list(rule.values())[0]:
+                                        print("found eitherOrRules")
+                                        eitherOrRulesAvailable = True
+
+                        rules.append(h["rules"])
+
+            print("rules for file:")
+            print(rules)
+
+            if len(rules) > 0:
+                print("!!! we have variants")
+                newFile = copy.deepcopy(file)
+                newFile["header"] = []
+
+                if not eitherOrRulesAvailable:
+                    resultFiles.append(newFile)
+
+                    for h in file["header"]:
+                        if not 'rules' in h:
+                            newFile["header"].append(h)
+
+                for rule in rules:
+                    newFile = copy.deepcopy(file)
+                    newFile["header"] = []
+                    newFile["rule"] = rule
+
+                    for h in file["header"]:
+                        if not 'rules' in h:
+                            newFile["header"].append(h)
+                        else:
+                            ruleContainsHeaderRules = True
+                            for r in h["rules"]:
+                                if not r in rule:
+                                    ruleContainsHeaderRules = False
+                                elif h["rules"][r] != rule[r]:
+                                    ruleContainsHeaderRules = False
+
+                            if ruleContainsHeaderRules:
+                                newFile["header"].append(h)
+
+                    resultFiles.append(newFile)
+            else:
+                resultFiles.append(file)
+
+
+    return resultFiles
 
 
 mainConfigUrl = baseUrl + "config.json"
