@@ -20,12 +20,14 @@ config = {
     "datasets": {
         "nodeList": {
             "data": nodeList
+        },
+        "dataFile": {
+            "data": dataFile
         }
-        "dataFile": dataFile
     },
     "settings": {
         "showLandmarks": "true",
-        "detailLayout": "egobubble"
+        "detailLayout": "egobubble",
     }
 }
 

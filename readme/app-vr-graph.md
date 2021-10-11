@@ -16,7 +16,7 @@ Virtual reality graph visualization
 
 #### Datasets
 
-Datasets can be provided either as json or as a 2-dimensional array (including the header).
+Datasets can be provided as 2-dimensional arrays (including the header).
 
 Name | Format (Header) | Options | Description
 ---- | --------------- | ------- | -----------

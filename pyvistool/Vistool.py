@@ -17,17 +17,17 @@ class Vistool():
         self.config["visType"] = visualization
         self.browser = browser
 
-        for key in self.config["data"]:
-            if isinstance(self.config["data"][key], dict):
-                self.config["data"][key] = json.dumps(self.config["data"][key])
-            elif isinstance(self.config["data"][key], list):
+        for key in self.config["datasets"]:
+            if isinstance(self.config["datasets"][key]["data"], dict):
+                self.config["datasets"][key]["data"] = json.dumps(self.config["datasets"][key]["data"])
+            elif isinstance(self.config["datasets"][key]["data"], list):
                 csvdata = ""
-                last_index = len(config["data"][key]) - 1
-                for index, row in enumerate(config["data"][key]):
+                last_index = len(config["datasets"][key]["data"]) - 1
+                for index, row in enumerate(config["datasets"][key]["data"]):
                     csvdata += ";".join(map(str, row))
                     if (index != last_index):
                         csvdata += "\\n"
-                self.config["data"][key] = csvdata
+                self.config["datasets"][key]["data"] = csvdata
 
 
     def show(self):

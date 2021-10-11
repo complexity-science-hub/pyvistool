@@ -1,13 +1,4 @@
 from pyvistool import Vistool
-import json
-
-jsonData = {
-    'a': 'a1',
-    'b': {
-        'ab': 'ab1',
-        'bb': 'ab2'
-    }
-}
 
 tableData = [
             ["a1", "b1", "c1"],
@@ -16,11 +7,13 @@ tableData = [
         ]
 
 config = {
-    "data": {
-        "dataset": tableData
+    "datasets": {
+        "dataset": {
+            "data": tableData
+        }
     },
     "settings": {
-        "settingA": "seawas"
+        "settingA": "a setting"
     }
 }
 
