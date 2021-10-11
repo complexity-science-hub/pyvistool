@@ -5,6 +5,8 @@ import os
 
 baseUrl = "https://vis.csh.ac.at/vistool/"
 
+includeHidden = False
+
 def createAppDoc(vis):
     appj = j2_env.get_template("app-template.md")
 
@@ -53,6 +55,10 @@ mainj = j2_env.get_template("apps-template.md")
 apps = []
 
 for vis in mainConfig["visualizations"]:
+    if 'hidden' in vis:
+        if not includeHidden and vis["hidden"]:
+            continue
+
     apps.append(vis)
     createAppDoc(vis)
 

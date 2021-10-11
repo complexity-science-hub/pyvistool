@@ -23,7 +23,7 @@ config = {
     },
     "settings": {
         "showLandmarks": "true",
-        "detailLayout": "sphereFishEye"
+        "detailLayout": "egobubble"
     }
 }
 

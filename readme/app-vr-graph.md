@@ -46,7 +46,7 @@ Name | Type | Required | Description
 
 Name | Type | Required | Description
 ---- | ---- | -------- | -----------
-```detailLayout``` | ```string``` |  | Detail layout mode<br><br><b>Options:</b><ul><li>Fly-Through: ```'normal'```</li><li>Jump-Through: ```'normalNoDirectLinks'```</li><li>Fish -Eye: ```'sphereFishEye'```</li><li>Tunnel: ```'rings'```</li></ul>
+```detailLayout``` | ```string``` |  | Detail layout mode<br><br><b>Options:</b><ul><li>Baseline: ```'baseline'```</li><li>Ego-Highlight: ```'egohighlight'```</li><li>Ego-Bubble: ```'egobubble'```</li></ul>
 ```showLandmarks``` | ```boolean``` |  | skybox
 ```permanentSelection``` | ```boolean``` |  | permanent selection
 ```distanceEncoding``` | ```boolean``` |  | distance encoding
