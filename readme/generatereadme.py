@@ -37,20 +37,21 @@ def createFileVariants(files):
             rules = []
             eitherOrRulesAvailable = False
 
-            for h in file["header"]:
-                if 'rules' in h:
-                    if not h["rules"] in rules:
-                        print("new rule: ")
-                        print(h["rules"])
-                        if len(h["rules"]) == 1 and isinstance(list(h["rules"].values())[0], bool):
-                            print("one rule is boolean")
-                            for rule in rules:
-                                if len(h["rules"]) == 1 and isinstance(list(rule.values())[0], bool):
-                                    if list(h["rules"].keys())[0] == list(rule.keys())[0] and list(h["rules"].values())[0] != list(rule.values())[0]:
-                                        print("found eitherOrRules")
-                                        eitherOrRulesAvailable = True
+            if "header" in file:
+                for h in file["header"]:
+                    if 'rules' in h:
+                        if not h["rules"] in rules:
+                            print("new rule: ")
+                            print(h["rules"])
+                            if len(h["rules"]) == 1 and isinstance(list(h["rules"].values())[0], bool):
+                                print("one rule is boolean")
+                                for rule in rules:
+                                    if len(h["rules"]) == 1 and isinstance(list(rule.values())[0], bool):
+                                        if list(h["rules"].keys())[0] == list(rule.keys())[0] and list(h["rules"].values())[0] != list(rule.values())[0]:
+                                            print("found eitherOrRules")
+                                            eitherOrRulesAvailable = True
 
-                        rules.append(h["rules"])
+                            rules.append(h["rules"])
 
             print("rules for file:")
             print(rules)

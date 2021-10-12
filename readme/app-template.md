@@ -21,7 +21,7 @@ Datasets can be provided as 2-dimensional arrays (including the header).
 Name | Format (Header) | Options | Description
 ---- | --------------- | ------- | -----------
 {% for file in files %}
-```{{ file.id }}```{% if file.rule is defined %}<br><br>(case: *{% for r in file.rule %}{{ r }} ==  {{ file.rule[r] }}{{ "; " if not loop.last else "" }}{% endfor %}*){% endif %} | ```{% for h in file.header %}{{ h.example }}{{ ";" if not loop.last else "" }}{% endfor %}``` | {% for option in file.options %}**{{ option.label }}**: ```{{ option.id }}```, type: ```{{ option.type }}```{{ "<br>" if not loop.last else "" }}{% endfor %} | {% if file.description|length %}{{ file.description }}<br><br>{% endif %}<ul>{% for h in file.header %}<li><b>{{ h.title }}</b>: {{ h.description }}</li>{% endfor %}</ul>
+```{{ file.id }}```{% if file.rule is defined %}<br><br>(case: *{% for r in file.rule %}{{ r }} ==  {{ file.rule[r] }}{{ "; " if not loop.last else "" }}{% endfor %}*){% endif %} | {% if file.header is defined %}```{% for h in file.header %}{{ h.example }}{{ ";" if not loop.last else "" }}{% endfor %}```{% endif %} | {% for option in file.options %}**{{ option.label }}**: ```{{ option.id }}```, type: ```{{ option.type }}```{{ "<br>" if not loop.last else "" }}{% endfor %} | {% if file.description|length %}{{ file.description }}<br><br>{% endif %}<ul>{% for h in file.header %}<li><b>{{ h.title }}</b>: {{ h.description }}</li>{% endfor %}</ul>
 {% endfor %}
 
 #### Settings
