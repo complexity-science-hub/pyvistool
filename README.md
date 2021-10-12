@@ -53,7 +53,7 @@ Create a configuration for the visualization you want to use:
             }
         },
         "settings": {
-            ....
+            ...
         }
     }
    </pre>

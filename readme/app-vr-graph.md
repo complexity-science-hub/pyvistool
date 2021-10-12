@@ -55,4 +55,43 @@ Name | Type | Required | Description
 ```overviewDetailTransition``` | ```boolean``` |  | smooth transition between overview and detail perspective
 ```createLayout``` | ```boolean``` |  | Generate static layout (generates a download which can be used to create a new visualization with precomputed layout)
 
-#### Example
+<!--- #### Example
+
+```py
+config = {
+    "datasets": {
+        "nodeList": {
+            "data": {
+                ...
+            }
+        },
+        "dataFile": {
+            "data": {
+                ...
+            }
+        }
+    },
+    "settings": {
+        "node-label": ...,
+        "node-desc": ...,
+        "node-auto-color-by": ...,
+        "node-val": ...,
+        "node-color": ...,
+        "node-label-billboard": ...,
+        "link-label": ...,
+        "link-width": ...,
+        "link-color": ...,
+        "detailLayout": ...,
+        "showLandmarks": ...,
+        "permanentSelection": ...,
+        "distanceEncoding": ...,
+        "nodeDegreeInfo": ...,
+        "freeFlying": ...,
+        "overviewDetailTransition": ...,
+        "createLayout": ...
+    }
+}
+
+vt = Vistool("vr-graph", config)
+vt.show()
+``` -->

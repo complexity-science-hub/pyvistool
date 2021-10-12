@@ -16,7 +16,7 @@ Just a small python test
 
 #### Datasets
 
-Datasets can be provided either as json or as a 2-dimensional array (including the header).
+Datasets can be provided as 2-dimensional arrays (including the header).
 
 Name | Format (Header) | Options | Description
 ---- | --------------- | ------- | -----------
@@ -36,4 +36,72 @@ Name | Type | Required | Description
 ```settingA``` | ```string``` |  | Setting A
 ```settingB``` | ```string``` |  | Setting B
 
-#### Example
+<!--- #### Example
+
+```py
+config = {
+    "datasets": {
+        "dataset": {
+            "options": {
+                "settingA": ...,
+                "settingB": ...
+            },
+            "data": {
+                ...
+            }
+        },
+        "dataset": {
+            "options": {
+                "settingA": ...,
+                "settingB": ...
+            },
+            "data": {
+                ...
+            }
+        },
+        "dataset": {
+            "options": {
+                "settingA": ...,
+                "settingB": ...
+            },
+            "data": {
+                ...
+            }
+        },
+        "dataset": {
+            "options": {
+                "settingA": ...,
+                "settingB": ...
+            },
+            "data": {
+                ...
+            }
+        },
+        "dataset": {
+            "options": {
+                "settingA": ...,
+                "settingB": ...
+            },
+            "data": {
+                ...
+            }
+        },
+        "dataset": {
+            "options": {
+                "settingA": ...,
+                "settingB": ...
+            },
+            "data": {
+                ...
+            }
+        }
+    },
+    "settings": {
+        "settingA": ...,
+        "settingB": ...
+    }
+}
+
+vt = Vistool("pytest", config)
+vt.show()
+``` -->

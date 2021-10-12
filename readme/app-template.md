@@ -37,4 +37,35 @@ Name | Type | Required | Description
 {% endfor %}
 {% endfor %}
 
-#### Example
+<!--- #### Example
+
+```py
+config = {
+    "datasets": {
+{% for file in files %}
+        "{{ file.id }}": {
+{% if file.options %}
+            "options": {
+{% for option in file.options %}
+                "{{ option.id }}": ...{{ "," if not loop.last else "" }}
+{% endfor %}
+            },
+{% endif %}
+            "data": {
+                ...
+            }
+        }{{ "," if not loop.last else "" }}
+{% endfor %}
+    },
+    "settings": {
+{% for setting in settings %}{% set loop1 = loop %}
+{% for attribute in setting.attributes %}
+        "{{ attribute.id }}": ...{{ "," if not loop.last or not loop1.last else "" }}
+{% endfor %}
+{% endfor %}
+    }
+}
+
+vt = Vistool("{{ app.id }}", config)
+vt.show()
+``` -->

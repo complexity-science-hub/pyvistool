@@ -16,7 +16,7 @@ Bipartite network visualization
 
 #### Datasets
 
-Datasets can be provided either as json or as a 2-dimensional array (including the header).
+Datasets can be provided as 2-dimensional arrays (including the header).
 
 Name | Format (Header) | Options | Description
 ---- | --------------- | ------- | -----------
@@ -34,4 +34,36 @@ Name | Type | Required | Description
 ```unit_space``` | ```boolean``` |  | Space between value and unit
 ```unit_position``` | ```string``` |  | Unit positioning<br><br><b>Options:</b><ul><li>Left of value: ```'left'```</li><li>Right of value: ```'right'```</li></ul>
 
-#### Example
+<!--- #### Example
+
+```py
+config = {
+    "datasets": {
+        "dataset": {
+            "options": {
+                "custom_clustering": ...
+            },
+            "data": {
+                ...
+            }
+        },
+        "dataset": {
+            "options": {
+                "custom_clustering": ...
+            },
+            "data": {
+                ...
+            }
+        }
+    },
+    "settings": {
+        "unit": ...,
+        "decimals": ...,
+        "unit_space": ...,
+        "unit_position": ...
+    }
+}
+
+vt = Vistool("bipartite", config)
+vt.show()
+``` -->
