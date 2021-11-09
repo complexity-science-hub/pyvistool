@@ -20,7 +20,7 @@
             let input = document.createElement('textarea');
             input.type = "type";
             input.name = "pyconfig";
-            input.value = "{{vistoolconfig}}".replace(/'/g, '"');
+            input.value = JSON.stringify({{vistoolconfig}});
 
             form.append(input);
 

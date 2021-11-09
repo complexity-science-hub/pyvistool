@@ -20,8 +20,9 @@ Datasets can be provided as 2-dimensional arrays (including the header).
 
 Name | Format (Header) | Options | Description
 ---- | --------------- | ------- | -----------
-```nodeList``` | ```id;weight;desc;...``` |  | <ul><li><b>id</b>: the id of the node</li><li><b>Attributes</b>: add as many attributes as you want</li></ul>
-```dataFile``` | ```source;target;weight;desc;...``` |  | <ul><li><b>Source</b>: id of the source node</li><li><b>Target</b>: id of the target node</li><li><b>Attributes</b>: add as many attributes as you want</li></ul>
+```nodeList``` | ```id;weight;desc;...``` | **Node list has layout**: ```has_layout```, type: ```boolean``` | <ul><li><b>id</b>: the id of the node</li><li><b>additional attributes</b>: add as many attributes as you want</li></ul>
+```nodeList```<br><br>(case: *has_layout ==  True*) | ```id;x;y;z;weight;desc;...``` | **Node list has layout**: ```has_layout```, type: ```boolean``` | <ul><li><b>id</b>: the id of the node</li><li><b>x</b>: the x position of the node</li><li><b>y</b>: the y position of the node</li><li><b>z</b>: the z position of the node</li><li><b>additional attributes</b>: add as many attributes as you want</li></ul>
+```dataFile``` | ```source;target;weight;desc;...``` |  | <ul><li><b>source</b>: id of the source node</li><li><b>target</b>: id of the target node</li><li><b>additional attributes</b>: add as many attributes as you want</li></ul>
 
 #### Settings
 
@@ -31,9 +32,9 @@ Name | Type | Required | Description
 ---- | ---- | -------- | -----------
 ```node-label``` | ```string``` | yes | Node label column<br><br><b>Options:</b><br>column name of dataset ```nodeList```
 ```node-desc``` | ```string``` |  | Node description column<br><br><b>Options:</b><br>column name of dataset ```nodeList```
-```node-auto-color-by``` | ```string``` |  | Node color by column<br><br><b>Options:</b><br>column name of dataset ```nodeList```
+```node-auto-color-by``` | ```string``` |  | Node color by category<br><br><b>Options:</b><br>column name of dataset ```nodeList```
 ```node-val``` | ```string``` |  | Node value column<br><br><b>Options:</b><br>column name of dataset ```nodeList```
-```node-color``` | ```string``` |  | Node color column<br><br><b>Options:</b><br>column name of dataset ```nodeList```
+```node-color``` | ```string``` |  | Explicit Node color column (format: 'rgb(0-255, 0-255, 0-255)'; overrides 'Node color by category' setting)<br><br><b>Options:</b><br>column name of dataset ```nodeList```
 ```node-label-billboard``` | ```boolean``` |  | Display node labels as billboards
 ##### Edge settings
 
@@ -53,7 +54,7 @@ Name | Type | Required | Description
 ```nodeDegreeInfo``` | ```boolean``` |  | node degree info attached to the controller
 ```freeFlying``` | ```boolean``` |  | allow free flying (has effect on 'Jump-Through' and 'Fish-Eye' conditions only)
 ```overviewDetailTransition``` | ```boolean``` |  | smooth transition between overview and detail perspective
-```createLayout``` | ```boolean``` |  | Generate static layout (generates a download which can be used to create a new visualization with precomputed layout)
+```createLayout``` | ```boolean``` |  | Generate static layout (generates a downloadable node list which can be used to create a new visualization with precomputed layout). Give it a few seconds until the layout has settled.
 
 <!--- #### Example
 
@@ -61,6 +62,17 @@ Name | Type | Required | Description
 config = {
     "datasets": {
         "nodeList": {
+            "options": {
+                "has_layout": ...
+            },
+            "data": {
+                ...
+            }
+        },
+        "nodeList": {
+            "options": {
+                "has_layout": ...
+            },
             "data": {
                 ...
             }

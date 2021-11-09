@@ -26,7 +26,7 @@ class Vistool():
                 for index, row in enumerate(config["datasets"][key]["data"]):
                     csvdata += ";".join(map(str, row))
                     if (index != last_index):
-                        csvdata += "\\n"
+                        csvdata += "\n"
                 self.config["datasets"][key]["data"] = csvdata
 
 
