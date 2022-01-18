@@ -44,6 +44,6 @@ config = {
     }
 }
 
-#vt = Vistool("vr-graph", config, "chrome")
+#vt = Vistool("map-arcs", config, "chrome")
 vt = Vistool("map-arcs", config)
 vt.show()
