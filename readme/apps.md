@@ -6,3 +6,4 @@ Name | App ID | Screenshot
 ----- | ----- | ----------
 VR Graph<br>[details](app-vr-graph.md) | ```vr-graph``` | <img src="https://vis.csh.ac.at/vistool/visualizations/vr-graph/vrnets.png" height="200">
 Map Arcs<br>[details](app-map-arcs.md) | ```map-arcs``` | <img src="https://vis.csh.ac.at/vistool/visualizations/map-arcs/maparcs.png" height="200">
+Geospatial Slicing<br>[details](app-geo-slicing.md) | ```geo-slicing``` | <img src="https://vis.csh.ac.at/vistool/visualizations/geo-slicing/geoslice.png" height="200">
