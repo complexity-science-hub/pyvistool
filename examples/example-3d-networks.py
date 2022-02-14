@@ -49,4 +49,5 @@ config = {
 }
 
 vt = Vistool("3d-nets", config, "chrome")
+#vt = Vistool("3d-nets", config)
 vt.show()
