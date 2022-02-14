@@ -17,10 +17,22 @@
             form.method = "post";
             form.style.visibility = "hidden";
 
+            let config = {{vistoolconfig}};
+
+            Object.keys(config.settings).forEach(key => {
+               if (config.settings[key] == 'true') {
+                   config.settings[key] = true;
+               }
+
+                if (config.settings[key] == 'false') {
+                    config.settings[key] = false;
+                }
+            });
+
             let input = document.createElement('textarea');
             input.type = "type";
             input.name = "pyconfig";
-            input.value = JSON.stringify({{vistoolconfig}});
+            input.value = JSON.stringify(config);
 
             form.append(input);
 

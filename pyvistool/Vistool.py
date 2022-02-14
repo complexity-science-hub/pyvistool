@@ -29,6 +29,13 @@ class Vistool():
                         csvdata += "\n"
                 self.config["datasets"][key]["data"] = csvdata
 
+        for key in self.config["settings"]:
+            if isinstance(self.config["settings"][key], bool):
+                if self.config["settings"][key]:
+                    self.config["settings"][key] = 'true'
+                else:
+                    self.config["settings"][key] = 'false'
+
 
     def show(self):
         TEMPLATES_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)))

@@ -24,7 +24,8 @@ config = {
         }
     },
     "settings": {
-        "settingA": "a setting"
+        "settingA": "a setting",
+        "boolSetting": False
     }
 }
 
