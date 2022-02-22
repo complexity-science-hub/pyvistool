@@ -21,7 +21,7 @@ Datasets can be provided as 2-dimensional arrays (including the header).
 Name | Format (Header) | Options | Description
 ---- | --------------- | ------- | -----------
 ```nodes``` | ```id;lat;lng;shapeId;Name;Field;...``` |  | <ul><li><b>id</b>: Node ID</li><li><b>lat</b>: Latitude of the node</li><li><b>lng</b>: Longitude of the node</li><li><b>shapeId</b>: The ID of the shape in the shapefile this node corresponds to. If you do not upload a shape file, use the ISO3 country code.</li><li><b>Attributes</b>: add as many attributes as you want. They will be used as filters.</li></ul>
-```edges``` | ```sourceId;targetId;weight;[time]``` |  | <ul><li><b>sourceId</b>: Source ID</li><li><b>targetId</b>: Target ID</li><li><b>weight</b>: Weight</li><li><b>time</b>: Time (optional)</li></ul>
+```edges``` | ```sourceId;targetId;weight;[time];Category;...``` |  | <ul><li><b>sourceId</b>: Source ID</li><li><b>targetId</b>: Target ID</li><li><b>weight</b>: Weight</li><li><b>time</b>: Time (optional)</li><li><b>Attributes</b>: add as many attributes as you want. They will be used as filters.</li></ul>
 ```shapeFile``` |  |  | Shapefile in the geojson format. If you leave it blank, all countries of the world will be used.<br><br><ul></ul>
 
 #### Settings
@@ -33,6 +33,8 @@ Name | Type | Required | Description
 ```shapeFileIdAttribute``` | ```string``` |  | Attribute name of shapes used as the shapeId in the 'Nodes List' (default: 'ISO3')
 ```shapeFileNameAttribute``` | ```string``` |  | Attribute name of shapes used as the name
 ```showAllEdgesOnStart``` | ```boolean``` |  | Show all edges on start
+```arcMinWidth``` | ```number``` |  | Minimum width of arcs
+```arcMaxWidth``` | ```number``` |  | Maximum width of arcs
 ##### Labels
 
 Name | Type | Required | Description
@@ -73,6 +75,8 @@ config = {
         "shapeFileIdAttribute": ...,
         "shapeFileNameAttribute": ...,
         "showAllEdgesOnStart": ...,
+        "arcMinWidth": ...,
+        "arcMaxWidth": ...,
         "pageTitle": ...,
         "shapeLabel": ...,
         "flowLabel": ...,

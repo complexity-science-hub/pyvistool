@@ -20,7 +20,7 @@ Datasets can be provided as 2-dimensional arrays (including the header).
 
 Name | Format (Header) | Options | Description
 ---- | --------------- | ------- | -----------
-```node_path``` | ```id;weight;layer;label;R;G;B;x;y;z;desc``` |  | <ul><li><b>id</b>: Node ID</li><li><b>weight</b>: Node weight (numerical value)</li><li><b>layer</b>: Layer ID (for multilayer networks - numerical)</li><li><b>label</b>: A short text label describing the node.</li><li><b>R</b>: Red value of the node's RGB color [0,255]</li><li><b>G</b>: Green value of the node's RGB color [0,255]</li><li><b>B</b>: Blue value of the node's RGB color [0,255]</li><li><b>x</b>: Node's position on the x-axis.</li><li><b>y</b>: Node's position on the y-axis.</li><li><b>z</b>: Node's position on the z-axis.</li><li><b>desc</b>: Detailed node description (optional).</li></ul>
+```node_path``` | ```id;weight;label;desc;layer;group1,group2,group3;R;G;B;x;y;z``` |  | <ul><li><b>id</b>: Node ID</li><li><b>weight</b>: Node weight (numerical value)</li><li><b>label</b>: A short text label describing the node.</li><li><b>desc</b>: Detailed node description (optional).</li><li><b>layer</b>: Layer ID (for multilayer networks - numerical)</li><li><b>cluster</b>: One or more attribute classes (or cluster IDs) by which nodes can be grouped (optional). If you list multiple attributes/clusters, they should be separated with a comma.</li><li><b>R</b>: Red value of the node's RGB color [0,255]</li><li><b>G</b>: Green value of the node's RGB color [0,255]</li><li><b>B</b>: Blue value of the node's RGB color [0,255]</li><li><b>x</b>: Node's position on the x-axis.</li><li><b>y</b>: Node's position on the y-axis.</li><li><b>z</b>: Node's position on the z-axis.</li></ul>
 ```link_path``` | ```s_id;t_id;l_weight;l_label``` |  | <ul><li><b>s_id</b>: Source node ID</li><li><b>t_id</b>: Target node ID</li><li><b>l_weight</b>: Link weight (numerical)</li><li><b>l_label</b>: Link label</li></ul>
 
 #### Settings
@@ -41,22 +41,23 @@ Name | Type | Required | Description
 ```encodeLinkWeights``` | ```boolean``` |  | Change the link color by the link's weight
 ```filterAttribute``` | ```boolean``` |  | Option to filter nodes based on an attribute group (e.g., a cluster ID)
 ```numForces``` | ```string``` |  | Number of dimensions for force-simulation<br><br><b>Options:</b><ul><li>3: ```'3'```</li><li>2: ```'2'```</li><li>1: ```'1'```</li></ul>
+```nodeColorMode``` | ```string``` |  | Node color mode..<br><br><b>Options:</b><ul><li>no colors: ```'0'```</li><li>RGB values from CSV: ```'1'```</li><li>Color based on weight: ```'2'```</li><li>Color based on layer: ```'3'```</li></ul>
 ```id``` | ```number``` |  | Node ID index in CSV
 ```weight``` | ```number``` |  | Node weight index in CSV
-```layer``` | ```number``` |  | Node layer index in CSV
 ```label``` | ```number``` |  | Node label index in CSV
-```r``` | ```number``` |  | r (RGB) index in CSV (default: 4)
-```g``` | ```number``` |  | g (RGB) index in CSV (default: 5)
-```b``` | ```number``` |  | b (RGB) index in CSV (default: 6)
-```x``` | ```number``` |  | Node's x-position index in CSV (default: 7)
-```y``` | ```number``` |  | Node's y-position index in CSV (default: 8)
-```z``` | ```number``` |  | Node's z-position index in CSV (default: 9)
 ```desc``` | ```number``` |  | Node description index in CSV (default: 10)
+```layer``` | ```number``` |  | Node layer index in CSV
 ```attrToFilter``` | ```number``` |  | Index of cluster/group filter attribute in CSV
-```s_id``` | ```number``` |  | Link source ID index in CSV (default: 0)
-```t_id``` | ```number``` |  | Link target ID index in CSV (default: 1)
-```l_weight``` | ```number``` |  | Link weight index in CSV (default: 2)
-```l_label``` | ```number``` |  | Link label index in CSV (default: 3)
+```r``` | ```number``` |  | r (RGB) index in CSV
+```g``` | ```number``` |  | g (RGB) index in CSV
+```b``` | ```number``` |  | b (RGB) index in CSV
+```x``` | ```number``` |  | Node's x-position index in CSV
+```y``` | ```number``` |  | Node's y-position index in CSV
+```z``` | ```number``` |  | Node's z-position index in CSV
+```s_id``` | ```number``` |  | Link source ID index in CSV
+```t_id``` | ```number``` |  | Link target ID index in CSV
+```l_weight``` | ```number``` |  | Link weight index in CSV
+```l_label``` | ```number``` |  | Link label index in CSV
 
 <!--- #### Example
 
@@ -87,18 +88,19 @@ config = {
         "encodeLinkWeights": ...,
         "filterAttribute": ...,
         "numForces": ...,
+        "nodeColorMode": ...,
         "id": ...,
         "weight": ...,
-        "layer": ...,
         "label": ...,
+        "desc": ...,
+        "layer": ...,
+        "attrToFilter": ...,
         "r": ...,
         "g": ...,
         "b": ...,
         "x": ...,
         "y": ...,
         "z": ...,
-        "desc": ...,
-        "attrToFilter": ...,
         "s_id": ...,
         "t_id": ...,
         "l_weight": ...,
