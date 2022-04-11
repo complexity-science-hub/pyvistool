@@ -41,7 +41,7 @@ Name | Type | Required | Description
 ```encodeLinkWeights``` | ```boolean``` |  | Change the link color by the link's weight
 ```filterAttribute``` | ```boolean``` |  | Option to filter nodes based on an attribute group (e.g., a cluster ID)
 ```numForces``` | ```string``` |  | Number of dimensions for force-simulation<br><br><b>Options:</b><ul><li>3: ```'3'```</li><li>2: ```'2'```</li><li>1: ```'1'```</li></ul>
-```nodeColorMode``` | ```string``` |  | Node color mode..<br><br><b>Options:</b><ul><li>no colors: ```'0'```</li><li>RGB values from CSV: ```'1'```</li><li>Color based on weight: ```'2'```</li><li>Color based on layer: ```'3'```</li></ul>
+```nodeColorMode``` | ```string``` |  | Node color mode<br><br><b>Options:</b><ul><li>no colors: ```'0'```</li><li>RGB values from CSV: ```'1'```</li><li>Color based on weight: ```'2'```</li><li>Color based on layer: ```'3'```</li></ul>
 ```id``` | ```number``` |  | Node ID index in CSV
 ```weight``` | ```number``` |  | Node weight index in CSV
 ```label``` | ```number``` |  | Node label index in CSV

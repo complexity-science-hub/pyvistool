@@ -32,9 +32,15 @@ Name | Type | Required | Description
 ---- | ---- | -------- | -----------
 ```shapeFileIdAttribute``` | ```string``` |  | Attribute name of shapes used as the shapeId in the 'Nodes List' (default: 'ISO3')
 ```shapeFileNameAttribute``` | ```string``` |  | Attribute name of shapes used as the name
-```showAllEdgesOnStart``` | ```boolean``` |  | Show all edges on start
 ```arcMinWidth``` | ```number``` |  | Minimum width of arcs
 ```arcMaxWidth``` | ```number``` |  | Maximum width of arcs
+##### Filters
+
+Name | Type | Required | Description
+---- | ---- | -------- | -----------
+```showAllEdgesOnStart``` | ```boolean``` |  | Show all edges on start
+```nodeFilterAttributes``` | ```multiselect``` |  | Node attributes used as filters
+```edgeFilterAttributes``` | ```multiselect``` |  | Edge attributes used as filters
 ##### Labels
 
 Name | Type | Required | Description
@@ -49,6 +55,28 @@ Name | Type | Required | Description
 ```enableTimeline``` | ```boolean``` |  | Enable timeline
 ```timelineLabelX``` | ```string``` |  | Timeline Label X
 ```timelineLabelY``` | ```string``` |  | Timeline Label Y
+##### Hexagons
+
+Name | Type | Required | Description
+---- | ---- | -------- | -----------
+```enableHexagons``` | ```boolean``` |  | Enable hexagons to visualize aggregated node attributes (numeric attributes only)
+```hexagonAttributes``` | ```multiselect``` | yes | Node attributes used for hexagons
+```defaultHexAggregation``` | ```string``` |  | Aggregation mode - how should values within a hexagon be aggregated?<br><br><b>Options:</b><ul><li>sum: ```'SUM'```</li><li>mean: ```'MEAN'```</li></ul>
+```hexagonGridSize``` | ```number``` | yes | Initial grid size of hexagons in meteres
+##### Histogram
+
+Name | Type | Required | Description
+---- | ---- | -------- | -----------
+```enableDistribution``` | ```boolean``` |  | Enable distribution histogram
+```nodeDistributionAttributes``` | ```multiselect``` |  | Node attributes used as filters
+```edgeDistributionAttributes``` | ```multiselect``` |  | Edge attributes used as filters
+```distributionBins``` | ```number``` | yes | How many bins should be used for the histogram?
+##### Multiple Scenarios
+
+Name | Type | Required | Description
+---- | ---- | -------- | -----------
+```enableMultipleScenarios``` | ```boolean``` |  | Enable multiple scenarios.
+```scenarioAttribute``` | ```string``` |  | The edge attribute defining the scenario<br><br><b>Options:</b><br>column name of dataset ```edges```
 
 <!--- #### Example
 
@@ -74,15 +102,27 @@ config = {
     "settings": {
         "shapeFileIdAttribute": ...,
         "shapeFileNameAttribute": ...,
-        "showAllEdgesOnStart": ...,
         "arcMinWidth": ...,
         "arcMaxWidth": ...,
+        "showAllEdgesOnStart": ...,
+        "nodeFilterAttributes": ...,
+        "edgeFilterAttributes": ...,
         "pageTitle": ...,
         "shapeLabel": ...,
         "flowLabel": ...,
         "enableTimeline": ...,
         "timelineLabelX": ...,
-        "timelineLabelY": ...
+        "timelineLabelY": ...,
+        "enableHexagons": ...,
+        "hexagonAttributes": ...,
+        "defaultHexAggregation": ...,
+        "hexagonGridSize": ...,
+        "enableDistribution": ...,
+        "nodeDistributionAttributes": ...,
+        "edgeDistributionAttributes": ...,
+        "distributionBins": ...,
+        "enableMultipleScenarios": ...,
+        "scenarioAttribute": ...
     }
 }
 

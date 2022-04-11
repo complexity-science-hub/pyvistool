@@ -34,6 +34,7 @@ Name | Type | Required | Description
 ```node-desc``` | ```string``` |  | Node description column<br><br><b>Options:</b><br>column name of dataset ```nodeList```
 ```node-auto-color-by``` | ```string``` |  | Node color by category<br><br><b>Options:</b><br>column name of dataset ```nodeList```
 ```node-val``` | ```string``` |  | Node value column<br><br><b>Options:</b><br>column name of dataset ```nodeList```
+```node-rel-size``` | ```number``` |  | Relative size of nodes
 ```node-color``` | ```string``` |  | Explicit Node color column (format: 'rgb(0-255, 0-255, 0-255)'; overrides 'Node color by category' setting)<br><br><b>Options:</b><br>column name of dataset ```nodeList```
 ```node-label-billboard``` | ```boolean``` |  | Display node labels as billboards
 ##### Edge settings
@@ -88,6 +89,7 @@ config = {
         "node-desc": ...,
         "node-auto-color-by": ...,
         "node-val": ...,
+        "node-rel-size": ...,
         "node-color": ...,
         "node-label-billboard": ...,
         "link-label": ...,
