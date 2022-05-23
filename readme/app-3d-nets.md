@@ -1,6 +1,6 @@
 ## VisTool App: 3D Networks
 
-<img src="https://vis.csh.ac.at/vistool/" height="400">
+<img src="https://vis.csh.ac.at/vistool/visualizations/3d-nets/3dnets.png" height="400">
 
 ### App ID
 

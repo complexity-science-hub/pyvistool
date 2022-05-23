@@ -1,6 +1,6 @@
 ## VisTool App: VR Graph
 
-<img src="https://vis.csh.ac.at/vistool/" height="400">
+<img src="https://vis.csh.ac.at/vistool/visualizations/vr-graph/vrnets.png" height="400">
 
 ### App ID
 

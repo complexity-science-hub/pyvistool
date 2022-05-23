@@ -1,6 +1,6 @@
 ## VisTool App: {{ app.title }}
 
-<img src="https://vis.csh.ac.at/vistool/{{ app.preview_image }}" height="400">
+<img src="https://vis.csh.ac.at/vistool/{{ app.previewImage }}" height="400">
 
 ### App ID
 
