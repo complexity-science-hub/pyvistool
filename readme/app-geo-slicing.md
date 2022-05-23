@@ -1,6 +1,6 @@
 ## VisTool App: Geospatial Correlations
 
-<img src="https://vis.csh.ac.at/vistool/visualizations/geo-slicing/geoslice.png" height="400">
+<img src="https://vis.csh.ac.at/vistool/" height="400">
 
 ### App ID
 

@@ -1,6 +1,6 @@
 ## VisTool App: 3D Networks
 
-<img src="https://vis.csh.ac.at/vistool/visualizations/3d-nets/3dnets.png" height="400">
+<img src="https://vis.csh.ac.at/vistool/" height="400">
 
 ### App ID
 
@@ -25,7 +25,7 @@ Name | Format (Header) | Options | Description
 
 #### Settings
 
-##### Settings
+##### File Settings
 
 Name | Type | Required | Description
 ---- | ---- | -------- | -----------
@@ -33,21 +33,12 @@ Name | Type | Required | Description
 ```link_delimiter``` | ```string``` |  | Delimiter of links CSV
 ```node_has_header``` | ```boolean``` |  | Nodes CSV has header
 ```link_has_header``` | ```boolean``` |  | Links CSV has header
-```showLayerLabels``` | ```boolean``` |  | Auto-generate labels for layers
-```calcForceLayout``` | ```boolean``` |  | Calculate an [1,3]-dimensional force-based layout
-```overwriteNodePos``` | ```boolean``` |  | Overwrite the original node positions for calculating the force layout
-```randomNodePos``` | ```boolean``` |  | Use random node positions (true) or (0,0,0)
-```encodeNodeSize``` | ```boolean``` |  | Scale the node size by the node's weight
-```encodeLinkWeights``` | ```boolean``` |  | Change the link color by the link's weight
-```filterAttribute``` | ```boolean``` |  | Option to filter nodes based on an attribute group (e.g., a cluster ID)
-```numForces``` | ```string``` |  | Number of dimensions for force-simulation<br><br><b>Options:</b><ul><li>3: ```'3'```</li><li>2: ```'2'```</li><li>1: ```'1'```</li></ul>
-```nodeColorMode``` | ```string``` |  | Node color mode<br><br><b>Options:</b><ul><li>no colors: ```'0'```</li><li>RGB values from CSV: ```'1'```</li><li>Color based on weight: ```'2'```</li><li>Color based on layer: ```'3'```</li></ul>
+```hasNodeID``` | ```boolean``` |  | Nodes have IDs (uncheck if IDs have to be generated)
 ```id``` | ```number``` |  | Node ID index in CSV
 ```weight``` | ```number``` |  | Node weight index in CSV
 ```label``` | ```number``` |  | Node label index in CSV
 ```desc``` | ```number``` |  | Node description index in CSV (default: 10)
 ```layer``` | ```number``` |  | Node layer index in CSV
-```attrToFilter``` | ```number``` |  | Index of cluster/group filter attribute in CSV
 ```r``` | ```number``` |  | r (RGB) index in CSV
 ```g``` | ```number``` |  | g (RGB) index in CSV
 ```b``` | ```number``` |  | b (RGB) index in CSV
@@ -58,6 +49,27 @@ Name | Type | Required | Description
 ```t_id``` | ```number``` |  | Link target ID index in CSV
 ```l_weight``` | ```number``` |  | Link weight index in CSV
 ```l_label``` | ```number``` |  | Link label index in CSV
+##### Display Settings
+
+Name | Type | Required | Description
+---- | ---- | -------- | -----------
+```showLayerLabels``` | ```boolean``` |  | Auto-generate labels for layers
+```nodeScale``` | ```number``` |  | Global node scale
+```encodeNodeSize``` | ```boolean``` |  | Scale the node size by the node's weight
+```scaleNodeByDegree``` | ```boolean``` |  | Scale the node size by the node's degree
+```scaleDegreeMode``` | ```string``` |  | Node degree calc. mode<br><br><b>Options:</b><ul><li>incoming edges: ```'0'```</li><li>outgoing edges: ```'1'```</li><li>incoming + outgoing: ```'2'```</li></ul>
+```encodeLinkWeights``` | ```boolean``` |  | Change the link color by the link's weight
+```filterAttribute``` | ```boolean``` |  | Option to filter nodes based on an attribute group (e.g., a cluster ID)
+```filterIndex``` | ```number``` |  | Index of cluster/group filter attribute in CSV
+```nodeColorMode``` | ```string``` |  | Node color mode<br><br><b>Options:</b><ul><li>no colors: ```'0'```</li><li>RGB values from CSV: ```'1'```</li><li>Color based on weight: ```'2'```</li><li>Color based on layer: ```'3'```</li></ul>
+##### Graph Settings
+
+Name | Type | Required | Description
+---- | ---- | -------- | -----------
+```calcForceLayout``` | ```boolean``` |  | Calculate an [1,3]-dimensional force-based layout
+```numForces``` | ```string``` |  | Number of dimensions for force-simulation<br><br><b>Options:</b><ul><li>3: ```'3'```</li><li>2: ```'2'```</li><li>1: ```'1'```</li></ul>
+```overwriteNodePos``` | ```boolean``` |  | Overwrite the original node positions for calculating the force layout
+```randomNodePos``` | ```boolean``` |  | Use random node positions (true) or (0,0,0)
 
 <!--- #### Example
 
@@ -80,21 +92,12 @@ config = {
         "link_delimiter": ...,
         "node_has_header": ...,
         "link_has_header": ...,
-        "showLayerLabels": ...,
-        "calcForceLayout": ...,
-        "overwriteNodePos": ...,
-        "randomNodePos": ...,
-        "encodeNodeSize": ...,
-        "encodeLinkWeights": ...,
-        "filterAttribute": ...,
-        "numForces": ...,
-        "nodeColorMode": ...,
+        "hasNodeID": ...,
         "id": ...,
         "weight": ...,
         "label": ...,
         "desc": ...,
         "layer": ...,
-        "attrToFilter": ...,
         "r": ...,
         "g": ...,
         "b": ...,
@@ -104,7 +107,20 @@ config = {
         "s_id": ...,
         "t_id": ...,
         "l_weight": ...,
-        "l_label": ...
+        "l_label": ...,
+        "showLayerLabels": ...,
+        "nodeScale": ...,
+        "encodeNodeSize": ...,
+        "scaleNodeByDegree": ...,
+        "scaleDegreeMode": ...,
+        "encodeLinkWeights": ...,
+        "filterAttribute": ...,
+        "filterIndex": ...,
+        "nodeColorMode": ...,
+        "calcForceLayout": ...,
+        "numForces": ...,
+        "overwriteNodePos": ...,
+        "randomNodePos": ...
     }
 }
 

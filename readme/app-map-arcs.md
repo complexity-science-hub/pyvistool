@@ -1,6 +1,6 @@
 ## VisTool App: Geospatial Flows
 
-<img src="https://vis.csh.ac.at/vistool/visualizations/map-arcs/maparcs.png" height="400">
+<img src="https://vis.csh.ac.at/vistool/" height="400">
 
 ### App ID
 
